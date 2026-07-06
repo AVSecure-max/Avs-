@@ -1,17 +1,15 @@
 // Firebase Configuration
-// Initialize Firebase with your project credentials
-// Get these values from your Firebase Console > Project Settings
+// Your AVS Firebase Project Credentials
 
 const firebaseConfig = {
-  // IMPORTANT: Replace these with YOUR actual Firebase credentials
-  // Go to: Firebase Console > Project Settings > Your apps > Web
-  apiKey: "YOUR_API_KEY_HERE",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  databaseURL: "https://YOUR_PROJECT.firebaseio.com",
-  projectId: "YOUR_PROJECT_ID_HERE",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID_HERE",
-  appId: "YOUR_APP_ID_HERE"
+  apiKey: "AIzaSyDjdpbtA249NKqXufhPQUh-85u3BBrtZ64",
+  authDomain: "av-31d7b.firebaseapp.com",
+  databaseURL: "https://av-31d7b-default-rtdb.firebaseio.com",
+  projectId: "av-31d7b",
+  storageBucket: "av-31d7b.firebasestorage.app",
+  messagingSenderId: "53251636337",
+  appId: "1:53251636337:web:ef02b5cb814227f7a32fd0",
+  measurementId: "G-GX6Y275Q76"
 };
 
 // Initialize Firebase
