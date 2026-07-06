@@ -1,0 +1,126 @@
+/* AVS Main Styles */
+
+:root {
+  --bg: #0b0b0f;
+  --red: #d72638;
+  --gold: #d4af37;
+  --white: #ffffff;
+  --gray: #b5b5b5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background: rgba(0,0,0,0.6);
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+}
+
+.navbar .logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--gold);
+}
+
+.navbar nav a {
+  margin: 0 10px;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.navbar nav a:hover {
+  color: var(--red);
+}
+
+/* Buttons */
+.button {
+  background: var(--red);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.3s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  background: #b91f2f;
+}
+
+.button.secondary {
+  background: transparent;
+  border: 1px solid var(--white);
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin: 20px 0;
+}
+
+.hero p {
+  color: var(--gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+/* Status Card */
+.status-card {
+  margin-top: 40px;
+  display: inline-block;
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+}
+
+/* Demo */
+.demo {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+textarea {
+  width: 80%;
+  max-width: 600px;
+  height: 120px;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 60px;
+}
