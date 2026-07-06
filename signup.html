@@ -98,9 +98,14 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .signup-btn:hover {
+        .signup-btn:hover:not(:disabled) {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .signup-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
         }
 
         .divider {
@@ -201,6 +206,45 @@
             display: block;
         }
 
+        .error-message {
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 0.75rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .success-message {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 0.75rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         @media (max-width: 600px) {
             .form-row {
                 grid-template-columns: 1fr;
@@ -221,6 +265,9 @@
 
             <h1>AVS</h1>
             <p>Start verifying information for free today!</p>
+
+            <div class="error-message" id="errorMessage"></div>
+            <div class="success-message" id="successMessage"></div>
 
             <form id="signupForm">
                 <div class="form-row">
@@ -271,7 +318,12 @@
                     </label>
                 </div>
 
-                <button type="submit" class="signup-btn">Create Account</button>
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Creating your account...</p>
+                </div>
+
+                <button type="submit" class="signup-btn" id="signupBtn">Create Account</button>
             </form>
 
             <div class="divider">
@@ -279,8 +331,8 @@
             </div>
 
             <div class="social-signup">
-                <button class="social-btn" type="button">Google</button>
-                <button class="social-btn" type="button">GitHub</button>
+                <button class="social-btn" type="button" disabled>Google</button>
+                <button class="social-btn" type="button" disabled>GitHub</button>
             </div>
 
             <div class="login-link">
@@ -289,11 +341,18 @@
         </div>
     </div>
 
-    <script>
-        // Password strength checker
+    <script type="module">
+        import { auth, createUserWithEmailAndPassword, database, ref, set } from './firebase-config.js';
+
+        const form = document.getElementById('signupForm');
+        const errorMsg = document.getElementById('errorMessage');
+        const successMsg = document.getElementById('successMessage');
         const passwordInput = document.getElementById('password');
         const passwordStrength = document.getElementById('passwordStrength');
+        const loading = document.getElementById('loading');
+        const signupBtn = document.getElementById('signupBtn');
 
+        // Password strength checker
         passwordInput.addEventListener('input', function() {
             const password = this.value;
             let strength = 'weak';
@@ -317,22 +376,74 @@
             }
         });
 
-        // Form submission
-        document.getElementById('signupForm').addEventListener('submit', function(e) {
+        // Form submission with Firebase
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
+            errorMsg.style.display = 'none';
+            successMsg.style.display = 'none';
 
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const company = document.getElementById('company').value;
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirmPassword').value;
+            const accountType = document.getElementById('accountType').value;
 
+            // Validate passwords match
             if (password !== confirmPassword) {
-                alert('Passwords do not match!');
+                errorMsg.textContent = '❌ Passwords do not match!';
+                errorMsg.style.display = 'block';
                 return;
             }
 
-            const firstName = document.getElementById('firstName').value;
-            alert(`Welcome ${firstName}! Your account has been created. Redirecting to login...`);
-            // In a real app, you would send this to your backend
-            window.location.href = 'login.html';
+            // Show loading state
+            loading.style.display = 'block';
+            signupBtn.disabled = true;
+
+            try {
+                // Create user account with Firebase Auth
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+
+                // Save additional user data to Realtime Database
+                await set(ref(database, 'users/' + user.uid), {
+                    firstName: firstName,
+                    lastName: lastName,
+                    email: email,
+                    company: company || 'N/A',
+                    accountType: accountType,
+                    createdAt: new Date().toISOString(),
+                    verifications: 0
+                });
+
+                // Show success message
+                successMsg.textContent = `✓ Account created successfully, ${firstName}! Redirecting to login...`;
+                successMsg.style.display = 'block';
+
+                // Redirect to login after 2 seconds
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 2000);
+
+            } catch (error) {
+                loading.style.display = 'none';
+                signupBtn.disabled = false;
+
+                // Handle different Firebase errors
+                let errorText = error.message;
+                
+                if (error.code === 'auth/email-already-in-use') {
+                    errorText = '❌ Email already in use. Please login or use a different email.';
+                } else if (error.code === 'auth/weak-password') {
+                    errorText = '❌ Password is too weak. Use at least 6 characters.';
+                } else if (error.code === 'auth/invalid-email') {
+                    errorText = '❌ Invalid email address.';
+                }
+
+                errorMsg.textContent = errorText;
+                errorMsg.style.display = 'block';
+            }
         });
     </script>
 </body>
