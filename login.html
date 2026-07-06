@@ -92,9 +92,14 @@
             transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .login-btn:hover {
+        .login-btn:hover:not(:disabled) {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .login-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
         }
 
         .divider {
@@ -173,6 +178,45 @@
         .back-home a:hover {
             text-decoration: underline;
         }
+
+        .error-message {
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 0.75rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .success-message {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 0.75rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 1rem 0;
+        }
+
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
@@ -185,7 +229,10 @@
             <h1>AVS</h1>
             <p>Welcome back! Please login to your account.</p>
 
-            <form>
+            <div class="error-message" id="errorMessage"></div>
+            <div class="success-message" id="successMessage"></div>
+
+            <form id="loginForm">
                 <div class="form-group">
                     <label for="email">Email Address</label>
                     <input type="email" id="email" name="email" placeholder="you@example.com" required>
@@ -203,7 +250,12 @@
                     <a href="forgot-password.html">Forgot password?</a>
                 </div>
 
-                <button type="submit" class="login-btn">Login</button>
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Logging in...</p>
+                </div>
+
+                <button type="submit" class="login-btn" id="loginBtn">Login</button>
             </form>
 
             <div class="divider">
@@ -211,8 +263,8 @@
             </div>
 
             <div class="social-login">
-                <button class="social-btn">Google</button>
-                <button class="social-btn">GitHub</button>
+                <button class="social-btn" type="button" disabled>Google</button>
+                <button class="social-btn" type="button" disabled>GitHub</button>
             </div>
 
             <div class="signup-link">
@@ -221,6 +273,85 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script type="module">
+        import { auth, signInWithEmailAndPassword, onAuthStateChanged } from './firebase-config.js';
+
+        const form = document.getElementById('loginForm');
+        const errorMsg = document.getElementById('errorMessage');
+        const successMsg = document.getElementById('successMessage');
+        const loading = document.getElementById('loading');
+        const loginBtn = document.getElementById('loginBtn');
+
+        // Check if user is already logged in
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is already logged in, redirect to dashboard
+                window.location.href = 'dashboard.html';
+            }
+        });
+
+        // Form submission with Firebase
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            errorMsg.style.display = 'none';
+            successMsg.style.display = 'none';
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const rememberMe = document.querySelector('input[name="remember"]').checked;
+
+            // Show loading state
+            loading.style.display = 'block';
+            loginBtn.disabled = true;
+
+            try {
+                // Sign in with Firebase Auth
+                const userCredential = await signInWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+
+                // If "Remember me" is checked, save email to localStorage
+                if (rememberMe) {
+                    localStorage.setItem('rememberedEmail', email);
+                } else {
+                    localStorage.removeItem('rememberedEmail');
+                }
+
+                // Show success message
+                successMsg.textContent = '✓ Login successful! Redirecting to dashboard...';
+                successMsg.style.display = 'block';
+
+                // Redirect to dashboard after 1 second
+                setTimeout(() => {
+                    window.location.href = 'dashboard.html';
+                }, 1000);
+
+            } catch (error) {
+                loading.style.display = 'none';
+                loginBtn.disabled = false;
+
+                // Handle different Firebase errors
+                let errorText = error.message;
+                
+                if (error.code === 'auth/user-not-found') {
+                    errorText = '❌ No account found with this email. Please sign up first.';
+                } else if (error.code === 'auth/wrong-password') {
+                    errorText = '❌ Incorrect password. Please try again.';
+                } else if (error.code === 'auth/invalid-email') {
+                    errorText = '❌ Invalid email address.';
+                } else if (error.code === 'auth/user-disabled') {
+                    errorText = '❌ This account has been disabled.';
+                }
+
+                errorMsg.textContent = errorText;
+                errorMsg.style.display = 'block';
+            }
+        });
+
+        // Populate email field if it was remembered
+        const rememberedEmail = localStorage.getItem('rememberedEmail');
+        if (rememberedEmail) {
+            document.getElementById('email').value = rememberedEmail;
+        }
+    </script>
 </body>
 </html>
