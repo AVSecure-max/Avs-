@@ -96,6 +96,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // ================================
+// Pricing / Stripe
+// ================================
+
+const proBtn = document.getElementById("pro-btn");
+
+if (proBtn) {
+    proBtn.addEventListener("click", async () => {
+
+        // Stripe Checkout will go here later
+
+        console.log("Upgrade to Pro clicked!");
+
+    });
+}
   // ===== BUTTON HOVER EFFECTS =====
   const buttons = document.querySelectorAll('.btn, .btn-primary, .btn-secondary');
   buttons.forEach(button => {
