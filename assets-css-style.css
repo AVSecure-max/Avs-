@@ -821,8 +821,8 @@ body{animation:pageFade .8s ease-out}
 }
 
 .loader-logo{
-    width:170px;
-    animation:logoIntro 1.8s ease-in-out infinite alternate;
+    width:210px;
+    animation:logoIntro 1.3s ease-in-out infinite alternate;
 }
 
 @keyframes logoIntro{
