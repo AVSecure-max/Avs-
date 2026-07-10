@@ -790,17 +790,17 @@ body::after{
 
     0%{
         transform:scale(1);
-        filter:drop-shadow(0 0 5px dark red);
+        filter:drop-shadow(0 0 5px red);
     }
 
     50%{
         transform:scale(1.08);
-        filter:drop-shadow(0 0 25px dark red);
+        filter:drop-shadow(0 0 25px red);
     }
 
     100%{
         transform:scale(1);
-        filter:drop-shadow(0 0 5px dark red);
+        filter:drop-shadow(0 0 5px red);
     }
 
 }
@@ -868,7 +868,7 @@ body::after{
     from{
         transform:scale(.9);
         opacity:.7;
-        filter:drop-shadow(0 0 5px #701f0b);
+        filter:drop-shadow(0 0 5px #e01616);
     }
 
     to{
