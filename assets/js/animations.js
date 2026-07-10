@@ -31,3 +31,19 @@ window.addEventListener("load", () => {
     },1800);
 
 });
+window.addEventListener("load", ()=>{
+
+    setTimeout(()=>{
+        document.getElementById("verify").style.opacity="1";
+    },2200);
+
+    setTimeout(()=>{
+        document.getElementById("ready").style.opacity="1";
+    },3300);
+
+    setTimeout(()=>{
+        document.getElementById("loader").style.opacity="0";
+        document.getElementById("loader").style.pointerEvents="none";
+    },4500);
+
+});
