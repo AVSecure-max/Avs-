@@ -334,6 +334,13 @@ body {
   color: var(--gold);
 }
 
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--gray-light);
+  line-height: 1.8;
+}
   .about h4 {
   text-align: center;
   font-size: 2.5rem;
@@ -341,6 +348,14 @@ body {
   color: var(--gold);
 }
   
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--gray-light);
+  line-height: 1.8;
+}
+
 /* ===== CONTACT SECTION ===== */
 .contact {
   padding: 80px 20px;
