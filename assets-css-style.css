@@ -830,13 +830,13 @@ body{animation:pageFade .8s ease-out}
     from{
         transform:scale(.9);
         opacity:.7;
-        filter:drop-shadow(0 0 5px #00d4ff);
+        filter:drop-shadow(0 0 5px #6d5cff22);
     }
 
     to{
         transform:scale(1.05);
         opacity:1;
-        filter:drop-shadow(0 0 25px #00d4ff);
+        filter:drop-shadow(0 0 25px #6d5cff22);
     }
 
 }
