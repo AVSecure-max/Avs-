@@ -850,7 +850,7 @@ body::after{
 #loader{
     position:fixed;
     inset:0;
-    background:#701f0b;
+    background:#1d1d1d;
     display:flex;
     justify-content:center;
     align-items:center;
