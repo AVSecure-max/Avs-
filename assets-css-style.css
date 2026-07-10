@@ -819,7 +819,7 @@ body::after{
 
     width:0%;
     height:100%;
-    background:linear-gradient(90deg,#00d4ff,#00ff95);
+    background:linear-gradient(90deg,#e6de47,#701f0b);
     animation:load 3.2s forwards;
 }
 
@@ -868,13 +868,13 @@ body::after{
     from{
         transform:scale(.9);
         opacity:.7;
-        filter:drop-shadow(0 0 5px #6d5cff22);
+        filter:drop-shadow(0 0 5px #701f0b);
     }
 
     to{
         transform:scale(1.05);
         opacity:1;
-        filter:drop-shadow(0 0 25px #6d5cff22);
+        filter:drop-shadow(0 0 25px #701f0b);
     }
 
 }
