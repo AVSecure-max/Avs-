@@ -1,3 +1,7 @@
+ window.addEventListener("load", () => {
+    document.body.style.opacity = "1";
+});
+
 /animation/
 const reveals = document.querySelectorAll(
     ".reveal, .reveal-left, .reveal-right, .reveal-scale"
