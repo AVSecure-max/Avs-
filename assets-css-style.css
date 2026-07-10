@@ -783,7 +783,7 @@ body::after{
 
     width:120px;
     margin-bottom:20px;
-    animation:pulse 1.8s infinite;
+    animation:pulse 1.2s infinite;
 }
 
 @keyframes pulse{
@@ -843,4 +843,43 @@ body::after{
     color:#00ff95;
     font-weight:bold;
     font-size:20px;
+}
+
+/* Full screen loader */
+
+#loader{
+    position:fixed;
+    inset:0;
+    background:#05060b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:99999;
+    transition:opacity .8s ease;
+}
+
+.loader-logo{
+    width:210px;
+    animation:logoIntro 1.3s ease-in-out infinite alternate;
+}
+
+@keyframes logoIntro{
+
+    from{
+        transform:scale(.9);
+        opacity:.7;
+        filter:drop-shadow(0 0 5px #6d5cff22);
+    }
+
+    to{
+        transform:scale(1.05);
+        opacity:1;
+        filter:drop-shadow(0 0 25px #6d5cff22);
+    }
+
+}
+
+body.loaded #loader{
+    opacity:0;
+    pointer-events:none;
 }
