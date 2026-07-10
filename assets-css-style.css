@@ -767,7 +767,7 @@ body::after{
     justify-content:center;
     align-items:center;
     z-index:999999;
-    transition:opacity .8s;
+    transition:opacity 1s;
 }
 
 /* Terminal */
@@ -783,7 +783,7 @@ body::after{
 
     width:120px;
     margin-bottom:20px;
-    animation:pulse 1.2s infinite;
+    animation:pulse 1.7s infinite;
 }
 
 @keyframes pulse{
@@ -820,7 +820,7 @@ body::after{
     width:0%;
     height:100%;
     background:linear-gradient(90deg,#00d4ff,#00ff95);
-    animation:load 2.5s forwards;
+    animation:load 3.2s forwards;
 }
 
 @keyframes load{
