@@ -327,6 +327,12 @@ body {
   line-height: 1.8;
 }
 
+.about {
+  padding: 80px 20px;
+  background: var(--bg-dark);
+  border-top: 2px solid var(--red-dark);
+}
+
 .about h3 {
   text-align: center;
   font-size: 2.5rem;
@@ -340,6 +346,12 @@ body {
   font-size: 1.1rem;
   color: var(--gray-light);
   line-height: 1.8;
+}
+
+.about {
+  padding: 80px 20px;
+  background: var(--bg-dark);
+  border-top: 2px solid var(--red-dark);
 }
   .about h4 {
   text-align: center;
