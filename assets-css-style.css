@@ -745,7 +745,7 @@ body::after{
 .reveal{
     opacity:0;
     transform:translateY(60px);
-    transition:all .8s ease;
+    transition:all 1s ease;
 }
 
 /* When visible */
@@ -760,7 +760,7 @@ body::after{
 .reveal-left{
     opacity:0;
     transform:translateX(-80px);
-    transition:all .8s ease;
+    transition:all 1s ease;
 }
 
 .reveal-left.active{
@@ -771,7 +771,7 @@ body::after{
 .reveal-right{
     opacity:0;
     transform:translateX(80px);
-    transition:all .8s ease;
+    transition:all 1s ease;
 }
 
 .reveal-right.active{
@@ -782,7 +782,7 @@ body::after{
 .reveal-scale{
     opacity:0;
     transform:scale(.9);
-    transition:all .8s ease;
+    transition:all 1s ease;
 }
 
 .reveal-scale.active{
