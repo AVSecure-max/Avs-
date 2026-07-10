@@ -820,7 +820,7 @@ body::after{
     width:0%;
     height:100%;
     background:linear-gradient(90deg,#e6de47,#701f0b);
-    animation:load 3.2s forwards;
+    animation:load 3.5s forwards;
 }
 
 @keyframes load{
@@ -860,7 +860,7 @@ body::after{
 
 .loader-logo{
     width:210px;
-    animation:logoIntro 1.3s ease-in-out infinite alternate;
+    animation:logoIntro 3.2s ease-in-out infinite alternate;
 }
 
 @keyframes logoIntro{
