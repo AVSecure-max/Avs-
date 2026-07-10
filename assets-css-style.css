@@ -845,3 +845,91 @@ body.loaded #loader{
     opacity:0;
     pointer-events:none;
 }
+
+/* FULL SCREEN */
+
+#loader{
+    position:fixed;
+    inset:0;
+    background:#05060b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+    transition:opacity .8s;
+}
+
+/* Terminal */
+
+.terminal{
+
+    text-align:center;
+    color:white;
+    font-family:monospace;
+}
+
+.loader-logo{
+
+    width:120px;
+    margin-bottom:20px;
+    animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+        filter:drop-shadow(0 0 5px cyan);
+    }
+
+    50%{
+        transform:scale(1.08);
+        filter:drop-shadow(0 0 25px cyan);
+    }
+
+    100%{
+        transform:scale(1);
+        filter:drop-shadow(0 0 5px cyan);
+    }
+
+}
+
+.progress{
+
+    width:260px;
+    height:10px;
+    background:#1d1d1d;
+    border-radius:100px;
+    overflow:hidden;
+    margin:20px auto;
+}
+
+.progress-bar{
+
+    width:0%;
+    height:100%;
+    background:linear-gradient(90deg,#00d4ff,#00ff95);
+    animation:load 2.5s forwards;
+}
+
+@keyframes load{
+
+    to{
+        width:100%;
+    }
+
+}
+
+#verify{
+
+    opacity:0;
+    margin-top:20px;
+}
+
+#ready{
+
+    opacity:0;
+    color:#00ff95;
+    font-weight:bold;
+    font-size:20px;
+}
