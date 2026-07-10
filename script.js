@@ -3,6 +3,10 @@
 
 document.addEventListener('DOMContentLoaded', function() {
   console.log('AVS Application Loaded');
+  
+  window.addEventListener("load", () => {
+    document.body.style.opacity = "1";
+});
 
   // ===== SMOOTH SCROLLING FOR ANCHOR LINKS =====
   const links = document.querySelectorAll('a[href^="#"]');
