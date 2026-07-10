@@ -21,3 +21,13 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        document.body.classList.add("loaded");
+
+    },1800);
+
+});
