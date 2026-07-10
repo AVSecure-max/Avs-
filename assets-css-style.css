@@ -790,17 +790,17 @@ body::after{
 
     0%{
         transform:scale(1);
-        filter:drop-shadow(0 0 5px cyan);
+        filter:drop-shadow(0 0 5px dark red);
     }
 
     50%{
         transform:scale(1.08);
-        filter:drop-shadow(0 0 25px cyan);
+        filter:drop-shadow(0 0 25px dark red);
     }
 
     100%{
         transform:scale(1);
-        filter:drop-shadow(0 0 5px cyan);
+        filter:drop-shadow(0 0 5px dark red);
     }
 
 }
@@ -840,7 +840,7 @@ body::after{
 #ready{
 
     opacity:0;
-    color:#00ff95;
+    color:#a31414;
     font-weight:bold;
     font-size:20px;
 }
@@ -850,7 +850,7 @@ body::after{
 #loader{
     position:fixed;
     inset:0;
-    background:#05060b;
+    background:#701f0b;
     display:flex;
     justify-content:center;
     align-items:center;
