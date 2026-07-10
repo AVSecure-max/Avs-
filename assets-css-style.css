@@ -327,6 +327,18 @@ body {
   line-height: 1.8;
 }
 
+.about h3 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--gold);
+
+  .about h4 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: var(--gold);
+  
 /* ===== CONTACT SECTION ===== */
 .contact {
   padding: 80px 20px;
