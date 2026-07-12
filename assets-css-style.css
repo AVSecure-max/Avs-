@@ -367,6 +367,11 @@ body {
   color: var(--gray-light);
   line-height: 1.8;
 }
+.about {
+  padding: 80px 20px;
+  background: var(--bg-dark);
+  border-top: 2px solid var(--red-dark);
+}
 
 /* ===== CONTACT SECTION ===== */
 .contact {
