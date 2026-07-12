@@ -616,7 +616,9 @@ h2 {
 }
 
 .about h2 {
-  text-align: center;
+  text-align: left;
+  display: block;
+  width: 100%;
   font-size: 2.7rem;
   margin-bottom: 2rem;
   color: var(--black);
@@ -636,7 +638,9 @@ h2 {
 }
 
 .about h3 {
-  text-align: center;
+  text-align: left;
+  display: block;
+  width: 100%;
   font-size: 2.7rem;
   margin-bottom: 2rem;
   color: var(--black);
@@ -655,7 +659,9 @@ h2 {
 }
 
 .about h4 {
-  text-align: center;
+ text-align: left;
+  display: block;
+  width: 100%;
   font-size: 2.7rem;
   margin-bottom: 2rem;
   color: var(--black);
@@ -674,7 +680,9 @@ h2 {
 }
 
 .about h5 {
-  text-align: center;
+  text-align: left;
+  display: block;
+  width: 100%;
   font-size: 2.7rem;
   margin-bottom: 2rem;
   color: var(--black);
@@ -693,7 +701,9 @@ h2 {
 }
 
 .about h6 {
-  text-align: center;
+  text-align: left;
+  display: block;
+  width: 100%;
   font-size: 2.7rem;
   margin-bottom: 2rem;
   color: var(--black);
@@ -712,7 +722,9 @@ h2 {
 }
 
 .about h7 {
-  text-align: center;
+  text-align: left;
+  display: block;
+  width: 100%;
   font-size: 2.7rem;
   margin-bottom: 2rem;
   color: var(--black);
@@ -731,7 +743,9 @@ h2 {
 }
 
 .about h8 {
-  text-align: center;
+  text-align: left;
+  display: block;
+  width: 100%;
   font-size: 2.7rem;
   margin-bottom: 2rem;
   color: var(--black);
@@ -750,7 +764,9 @@ h2 {
 }
 
 .about h9 {
-  text-align: center;
+  text-align: left;
+  display: block;
+  width: 100%;
   font-size: 2.7rem;
   margin-bottom: 2rem;
   color: var(--black);
@@ -769,7 +785,9 @@ h2 {
 }
 
 .about h10 {
-  text-align: center;
+  text-align: left;
+  display: block;
+  width: 100%;
   font-size: 2.7rem;
   margin-bottom: 2rem;
   color: var(--black);
@@ -788,7 +806,9 @@ h2 {
 }
 
 .about h11 {
-  text-align: center;
+  text-align: left;
+  display: block;
+  width: 100%;
   font-size: 2.7rem;
   margin-bottom: 2rem;
   color: var(--black);
@@ -807,7 +827,9 @@ h2 {
 }
 
 .about h12 {
-  text-align: center;
+  text-align: left;
+  display: block;
+  width: 100%;
   font-size: 2.7rem;
   margin-bottom: 2rem;
   color: var(--black);
@@ -826,7 +848,9 @@ h2 {
 }
 
 .about h13 {
-  text-align: center;
+  text-align: left;
+  display: block;
+  width: 100%;
   font-size: 2.7rem;
   margin-bottom: 2rem;
   color: var(--black);
@@ -845,7 +869,9 @@ h2 {
 }
 
 .about h14 {
-  text-align: center;
+  text-align: left;
+  display: block;
+  width: 100%;
   font-size: 2.7rem;
   margin-bottom: 2rem;
   color: var(--black);
