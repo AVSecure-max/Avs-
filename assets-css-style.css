@@ -609,6 +609,255 @@ h2 {
   animation: fadeIn 0.8s ease-out;
 }
 
+/* ===== Privacy Policy ===== */
+ .about {
+  padding: 80px 20px;
+  background: var(--bg-light);
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+  color: var(--black);
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--black);
+  line-height: 1.8;
+}
+
+.about {
+  padding: 80px 20px;
+  background: var(--bg-light);
+}
+
+.about h3 {
+  text-align: center;
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+  color: var(--black);
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--black);
+  line-height: 1.8;
+}
+.about {
+  padding: 80px 20px;
+  background: var(--bg-light);
+}
+
+.about h4 {
+  text-align: center;
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+  color: var(--black);
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--black);
+  line-height: 1.8;
+}
+.about {
+  padding: 80px 20px;
+  background: var(--bg-light);
+}
+
+.about h5 {
+  text-align: center;
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+  color: var(--black);
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--black);
+  line-height: 1.8;
+}
+.about {
+  padding: 80px 20px;
+  background: var(--bg-light);
+}
+
+.about h6 {
+  text-align: center;
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+  color: var(--black);
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--black);
+  line-height: 1.8;
+}
+.about {
+  padding: 80px 20px;
+  background: var(--bg-light);
+}
+
+.about h7 {
+  text-align: center;
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+  color: var(--black);
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--black);
+  line-height: 1.8;
+}
+.about {
+  padding: 80px 20px;
+  background: var(--bg-light);
+}
+
+.about h8 {
+  text-align: center;
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+  color: var(--black);
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--black);
+  line-height: 1.8;
+}
+.about {
+  padding: 80px 20px;
+  background: var(--bg-light);
+}
+
+.about h9 {
+  text-align: center;
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+  color: var(--black);
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--black);
+  line-height: 1.8;
+}
+.about {
+  padding: 80px 20px;
+  background: var(--bg-light);
+}
+
+.about h10 {
+  text-align: center;
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+  color: var(--black);
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--black);
+  line-height: 1.8;
+}
+.about {
+  padding: 80px 20px;
+  background: var(--bg-light);
+}
+
+.about h11 {
+  text-align: center;
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+  color: var(--black);
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--black);
+  line-height: 1.8;
+}
+.about {
+  padding: 80px 20px;
+  background: var(--bg-light);
+}
+
+.about h12 {
+  text-align: center;
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+  color: var(--black);
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--black);
+  line-height: 1.8;
+}
+.about {
+  padding: 80px 20px;
+  background: var(--bg-light);
+}
+
+.about h13 {
+  text-align: center;
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+  color: var(--black);
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--black);
+  line-height: 1.8;
+}
+.about {
+  padding: 80px 20px;
+  background: var(--bg-light);
+}
+
+.about h14 {
+  text-align: center;
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+  color: var(--black);
+}
+
+.about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  color: var(--black);
+  line-height: 1.8;
+}
 /* ==========================
    WEBSITE INTRO ANIMATION
 ========================== */
