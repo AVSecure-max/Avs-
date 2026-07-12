@@ -392,3 +392,13 @@ window.AVS = {
   storageHelper: window.storageHelper
 };
 
+const hero = document.querySelector(".hero");
+
+hero.addEventListener("mousemove",(e)=>{
+
+const x=(e.clientX/window.innerWidth-.5)*20;
+const y=(e.clientY/window.innerHeight-.5)*20;
+
+hero.style.backgroundPosition=`${50+x}% ${50+y}%`;
+
+});
