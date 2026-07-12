@@ -1189,3 +1189,57 @@ body.loaded #loader{
     opacity:0;
     pointer-events:none;
 }
+
+.hero{
+    position:relative;
+    height:100vh;
+    overflow:hidden;
+    background:#09090d;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.glow-arc{
+    position:absolute;
+
+    width:1700px;
+    height:1700px;
+
+    border-radius:50%;
+
+    bottom:-1450px;
+
+    background:
+    radial-gradient(circle,
+    transparent 59%,
+    rgba(255,255,255,.04) 60%,
+    transparent 61%);
+
+}
+
+.glow-arc::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    border-radius:50%;
+
+    background:
+    conic-gradient(
+    #ff5f6d,
+    #ffc371,
+    #6effe7,
+    #7a5cff,
+    #ff5f6d);
+
+    filter:blur(30px);
+
+    mask:
+    radial-gradient(circle,
+    transparent 58%,
+    black 60%,
+    transparent 62%);
+}
