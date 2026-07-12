@@ -1243,3 +1243,136 @@ body.loaded #loader{
     black 60%,
     transparent 62%);
 }
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background-image:
+
+linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+
+linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+
+background-size:40px 40px;
+
+opacity:.3;
+
+animation:gridMove 20s linear infinite;
+}
+
+@keyframes gridMove{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(40px);
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:
+
+repeating-linear-gradient(
+90deg,
+transparent,
+transparent 2px,
+rgba(255,255,255,.03) 3px,
+transparent 5px);
+
+opacity:.4;
+
+pointer-events:none;
+}
+
+.hero{
+
+background:
+radial-gradient(circle at center,
+#1a1a2d 0%,
+#0b0b12 45%,
+#050507 100%);
+}
+
+.hero-content{
+
+animation:fadeUp 1s ease forwards;
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+@keyframes fadeUp{
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+.button{
+
+padding:14px 32px;
+
+border-radius:999px;
+
+background:#111;
+
+position:relative;
+
+color:white;
+
+overflow:hidden;
+
+}
+
+.button::before{
+
+content:"";
+
+position:absolute;
+
+inset:-2px;
+
+background:linear-gradient(
+90deg,
+#ff7a18,
+#00ffe7,
+#6f5cff,
+#ff7a18);
+
+background-size:300%;
+
+animation:borderMove 6s linear infinite;
+
+z-index:-1;
+
+}
+
+@keyframes borderMove{
+
+0%{
+background-position:0%;
+}
+
+100%{
+background-position:300%;
+}
+
+}
