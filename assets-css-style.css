@@ -1969,3 +1969,80 @@ background-position:300%;
 }
 
 }
+
+
+/* Card Setup */
+.waitlist-card {
+  background-color: #121212; /* Rich deep black */
+  border: 2px solid #d4af37; /* Metallic gold border */
+  border-radius: 12px;
+  padding: 40px;
+  max-width: 450px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  font-family: Arial, sans-serif;
+}
+
+/* Text Colors */
+.waitlist-card h2 {
+  color: #ffffff; /* Bright white title */
+  margin-bottom: 10px;
+}
+
+.waitlist-card p {
+  color: #aaaaaa; /* Cool gray subtitle */
+  margin-bottom: 25px;
+}
+
+/* Email Input Field */
+.waitlist-card input[type="email"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: #222222; /* Dark gray input */
+  border: 1px solid #444444; /* Medium gray border */
+  border-radius: 6px;
+  color: #ffffff;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Input Focus Glow */
+.waitlist-card input[type="email"]:focus {
+  border-color: #d4af37; /* Changes to gold on click */
+  outline: none;
+}
+
+/* Gold Button */
+.waitlist-card button {
+  width: 100%;
+  padding: 14px;
+  background-color: #d4af37; /* Gold fill */
+  color: #121212; /* Black text */
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Button Hover State */
+.waitlist-card button:hover {
+  background-color: #f3e5ab; /* Lighter white-gold on hover */
+}
+
+/* Success and Alert Messages */
+.hidden-msg {
+  display: none;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.success-msg {
+  color: #d4af37; /* Gold text for success */
+}
+
+.error-msg {
+  color: #ff3333; /* Crimson red text for errors */
+}
