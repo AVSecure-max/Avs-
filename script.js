@@ -11,7 +11,30 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
- 
+ const form = document.getElementById("waitlistForm");
+const message = document.getElementById("waitlistMessage");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+
+  try {
+    await addDoc(collection(db, "waitlist"), {
+      name: name,
+      email: email,
+      joinedAt: serverTimestamp()
+    });
+
+    message.textContent = "You're on the AVS waitlist! 🎉";
+    form.reset();
+
+  } catch (error) {
+    console.error(error);
+    message.textContent = "Something went wrong. Please try again.";
+  }
+});
   // ===== SMOOTH SCROLLING FOR ANCHOR LINKS =====
   const links = document.querySelectorAll('a[href^="#"]');
   links.forEach(link => {
