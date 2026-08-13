@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AVS Admin — Waitlist</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 30px;
+      background: #f5f5f5;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h1 {
+      margin-bottom: 5px;
+    }
+
+    .stats {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+
+    .search {
+      width: 100%;
+      padding: 12px;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .table-container {
+      background: white;
+      border-radius: 12px;
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 14px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+      white-space: nowrap;
+    }
+
+    th {
+      background: #fafafa;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>AVS Admin</h1>
+    <p>Early Access Waitlist</p>
+
+    <div class="stats">
+      <strong>Total Waiting:</strong>
+      <span id="totalUsers">0</span>
+    </div>
+
+    <input
+      id="search"
+      class="search"
+      type="text"
+      placeholder="Search name or email..."
+    >
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>User Type</th>
+            <th>Joined</th>
+          </tr>
+        </thead>
+
+        <tbody id="waitlistTable">
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <script type="module" src="./admin.js"></script>
+
+</body>
+</html>
