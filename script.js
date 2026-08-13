@@ -5,7 +5,17 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 const firebaseConfig = {
-  // your Firebase config
+  / For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDjdpbtA249NKqXufhPQUh-85u3BBrtZ64",
+  authDomain: "av-31d7b.firebaseapp.com",
+  databaseURL: "https://av-31d7b-default-rtdb.firebaseio.com",
+  projectId: "av-31d7b",
+  storageBucket: "av-31d7b.firebasestorage.app",
+  messagingSenderId: "53251636337",
+  appId: "1:53251636337:web:ef02b5cb814227f7a32fd0",
+  measurementId: "G-GX6Y275Q76"
+};
 };
 
 const app = initializeApp(firebaseConfig);
