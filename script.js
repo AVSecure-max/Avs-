@@ -1,9 +1,16 @@
 // AVS - Main JavaScript File
 // Handles smooth scrolling, interactions, and animations
 
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('AVS Application Loaded');
-  
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, addDoc, serverTimestamp } from "firebase/firestore";
+
+const firebaseConfig = {
+  // your Firebase config
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
  
   // ===== SMOOTH SCROLLING FOR ANCHOR LINKS =====
   const links = document.querySelectorAll('a[href^="#"]');
