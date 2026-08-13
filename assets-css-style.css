@@ -1984,7 +1984,12 @@ body {
   align-items: center;
   min-height: 100vh;
 }
-
+{
+  background: linear-gradient(135deg, rgba(11, 11, 15, 1) 0%, rgba(5, 5, 8, 1) 100%);
+  padding: 100px 20px;
+  text-align: center;
+  border-bottom: 2px solid var(--red-dark);
+}
 /* Center Card layout */
 .waitlist-container {
   padding: 20px;
