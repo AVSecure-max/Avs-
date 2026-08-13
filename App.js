@@ -26,3 +26,22 @@ document.getElementById('waitlistForm').addEventListener('submit', async (e) => 
     msgBox.style.display = "block";
   }
 });
+// INSIDE YOUR FORM SUBMIT EVENT LISTENER...
+try {
+  await db.collection("waitlist").add({
+    email: emailInput,
+    joinedAt: firebase.firestore.FieldValue.serverTimestamp()
+  });
+
+  // Apply clean professional success box styling
+  msgBox.textContent = "You are on the list! Thank you.";
+  msgBox.className = "hidden-msg success-msg";
+  
+  document.getElementById('waitlistForm').reset();
+
+} catch (error) {
+  console.error("Error: ", error);
+  // Apply clean red error box styling
+  msgBox.textContent = "Something went wrong. Please try again.";
+  msgBox.className = "hidden-msg error-msg";
+}
