@@ -41,17 +41,23 @@
     </nav>
 
     <!-- Waitlist -->
-    <div class="waitlist-card">
-  <h2>Join the Exclusive Waitlist</h2>
-  <p>Be the first to know when we launch.</p>
-  
-  <form id="waitlistForm">
-    <input type="email" id="userEmail" placeholder="Enter your email address" required>
-    <button type="submit">Get Early Access</button>
-  </form>
-  
-  <div id="successMessage" class="hidden-msg">You are on the list! Thank you.</div>
+        
+    <div class="waitlist-container">
+  <div class="waitlist-card">
+    <h1 class="waitlist-title">Join the Exclusive<br>Waitlist</h1>
+    <p class="waitlist-subtitle">Be the first to know when we launch.</p>
+    
+    <form id="waitlistForm" class="waitlist-form">
+      <div class="input-group">
+        <input type="email" id="userEmail" placeholder="Enter your email address" required>
+        <button type="submit">Get Early Access</button>
+      </div>
+    </form>
+    
+    <div id="successMessage" class="hidden-msg">You are on the list! Thank you.</div>
+  </div>
 </div>
+
 
 
     <!-- Hero Section -->
